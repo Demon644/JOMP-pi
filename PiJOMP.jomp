@@ -1,0 +1,21 @@
+import jomp.runtime.*;
+
+public class PiJOMP {
+
+     static final long N = 2000000000;
+
+public static void main(String[] args) {
+
+     double pi = 0.0f;
+     long i;
+//setNumThreads(8);
+//omp parallel for private(i) reduction(+:pi) 
+    
+       for (i=0; i < N; i++) {
+           double t = (double) ((i+0.5)/N);
+           pi += 4.0/(1.0+t*t);
+       } 
+ 
+     System.out.println(String.format("Pi = %11.10f\n",pi/N));0
+}
+}
